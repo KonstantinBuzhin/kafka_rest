@@ -1,0 +1,46 @@
+spring:
+  datasource:
+    initialization-mode: embedded
+  kafka:
+    consumer:
+      bootstrap-servers: 35.188.132.205:9092
+      group-id: Kafka_Template
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      bootstrap-servers: 35.188.132.205:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringDeserializer
+
+ssh:
+  username: postgres
+  password: q1w2
+  host: 192.168.0.118
+  port: 22
+
+database:
+  #  url: jdbc:postgresql://127.0.0.1:1234/andersen
+  url: jdbc:postgresql://34.70.25.48:5432/dbTest
+  driverName: org.postgresql.Driver
+  username: postgres
+    #  password: password
+  password: postgres
+  host: 127.0.0.1
+  port: 5432
+
+cloudSqlInstance: jdbc:postgresql:///andersen?cloudSqlInstance=proud-spring-308908:europe-west3:andersen&socketFactory=com.google.cloud.sql.postgres.SocketFactory&user=postgres&password=password
+
+local_port: 1234
+
+server:
+  port: 8085
+
+jwt:
+  token:
+    secret: andersen
+    expired: 3600000
+
+logging:
+  config: classpath:logback.xml
+
